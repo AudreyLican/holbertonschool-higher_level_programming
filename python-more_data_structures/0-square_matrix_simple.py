@@ -1,11 +1,10 @@
 #!/usr/bin/python3
 def square_matrix_simple(matrix=[]):
-    #create empty list
     new_matrix = []
 
     for i in matrix:
         #calculate square of each element
-        square = list(map(lambda nb: nb**2, i))
+        square = list(map(lambda nb: nb ** 2, i))
         #add/append square of each element of matrix
         new_matrix.append(square)
     return new_matrix

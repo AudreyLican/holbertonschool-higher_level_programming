@@ -3,4 +3,5 @@
 
 
 class Square:
+    """Defines a square attribute"""
     pass

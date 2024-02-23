@@ -28,12 +28,12 @@ class Rectangle(Base):
     @width.setter
     def width(self, value):
         """Set the width of the rectangle"""
-        if type(value) is not (int):
+        if not isinstance(value, int):
             raise TypeError("width must be an integer")
         if value <= 0:
             raise ValueError("width must be > 0")
         self.__width = value
-        
+
     @property
     def height(self, value):
         """Get the height of the rectangle"""
@@ -42,7 +42,7 @@ class Rectangle(Base):
     @height.setter
     def height(self, value):
         """Set the height of the rectangle"""
-        if type(value) is not (int):
+        if not isinstance(value, int):
             raise TypeError("height must be a integer")
         if value <= 0:
             raise ValueError("heigth must be > 0")
@@ -81,7 +81,9 @@ class Rectangle(Base):
         return self.__width * self.__height
 
     def display(self):
-        """Print the rectangle using the characters '#', by taking care of x and y"""
+        """Print the rectangle using the characters '#',
+        by taking care of x and y
+        """
         for j in range(self.__y):
             print()
         for i in range(self.__height):
@@ -90,8 +92,8 @@ class Rectangle(Base):
     def __str__(self):
         """Return a string representation of the rectangle."""
         return ("[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.__x,
-                                                       self.__y, self.__width,
-                                                       self.__height))
+                                                        self.__y, self.__width,
+                                                        self.__height))
 
     def update(self, *args, **kwargs):
         """Assign arguments to the attributes, with args ans kwargs"""

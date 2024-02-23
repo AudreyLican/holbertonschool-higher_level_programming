@@ -30,7 +30,7 @@ class Square(Rectangle):
     def __str__(self):
         """Return a string representation of the square."""
         return "[Square] ({}) {}/{} - {}".format(self.id, self.x,
-                                                 self.y, self.width)
+                                                 self.y, self.size)
 
     def update(self, *args, **kwargs):
         """Assign arguments to the attributes with args, and kwargs"""

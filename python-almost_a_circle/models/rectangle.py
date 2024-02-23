@@ -56,7 +56,7 @@ class Rectangle(Base):
     @x.setter
     def x(self, value):
         """Set the x-coordinate of the rectangle."""
-        if type(value) is not (int):
+        if not isinstance(value, int):
             raise TypeError("x must be a integer")
         if value < 0:
             raise ValueError("x must be >= 0")
@@ -70,7 +70,7 @@ class Rectangle(Base):
     @y.setter
     def y(self, value):
         """Set the y-coordinate of the rectangle."""
-        if type(value) is not (int):
+        if not isinstance(value, int):
             raise TypeError("y must be a integer")
         if value < 0:
             raise ValueError("y must be >= 0")

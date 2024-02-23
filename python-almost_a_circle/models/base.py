@@ -1,16 +1,19 @@
 #!/usr/bin/python3
-"""Base class"""
+"""Module for Base class"""
 import json
 import os
 
 
-
-
-
 class Base:
+    """Base class for managing instances"""
     __nb_objects = 0
 
     def __init__(self, id=None):
+        """Initialize a Base instance.
+
+        Args:
+            id (int): ID of the instance (default is None).
+        """
         if id is not None:
             self.id = id
         else:
@@ -22,7 +25,7 @@ class Base:
         """Return the JSON string of representation of list dictionaries
         Args:
             list_dictionaries(list) : list of dictionaries
-        
+
         Returns:
             str: JSON string representation of list_dictionnaries.
         """
@@ -44,13 +47,21 @@ class Base:
             file.write(cls.to_json_string(list_dictionaries))
 
     def from_json_string(json_string):
+        """Return the list of dictionaries represented by json_string"""
         if not json_string:
             return []
         return json.loads(json_string)
 
     @classmethod
     def create(cls, **dictionary):
-        """Return a instance with all attributes set"""
+        """Return a instance with all attributes set
+
+        Args:
+            **dictionary: double pointer to a dictionary.
+
+        Returns:
+            Base: Instance with attributes set.
+        """
         if cls.__name__ == "Rectangle":
             dummy = cls(1, 1)
         elif cls.__name__ == "Square":
@@ -62,7 +73,11 @@ class Base:
 
     @classmethod
     def load_from_file(cls):
-        """Return a list of instances from a file"""
+        """Return a list of instances from a file
+
+        Returns:
+            list : List of instances.
+        """
         filename = "{}.json".format(cls.__name__)
         if not os.path.isfile(filename):
             return []

@@ -99,7 +99,7 @@ class Rectangle(Base):
         """Assign arguments to the attributes, with args ans kwargs"""
         attributes = ['id', 'width', 'height', 'x', 'y']
         if args:
-            attrs_plus_value = zip(attributes, args)
+            attrs_plus_value = list(zip(attributes, args))
             for attr_i, arg_j in attrs_plus_value:
                 setattr(self, attr_i, arg_j)
         elif kwargs:

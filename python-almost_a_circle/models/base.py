@@ -55,7 +55,8 @@ class Base:
             dummy = cls(1, 1)
         elif cls.__name__ == "Square":
             dummy = cls(1)
-
+        else:
+            raise Exception("Wrong class")
         dummy.update(**dictionary)
         return dummy
 
@@ -65,6 +66,7 @@ class Base:
         filename = "{}.json".format(cls.__name__)
         if not os.path.isfile(filename):
             return []
+
         with open(filename, "r") as file:
             file_read = file.read()
             list_dics = cls.from_json_string(file_read)

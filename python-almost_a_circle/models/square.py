@@ -35,7 +35,7 @@ class Square(Rectangle):
     def update(self, *args, **kwargs):
         """Assign arguments to the attributes with args, and kwargs"""
         attributes = ['id', 'size', 'x', 'y']
-        if args:
+        if args and len(args) > 0:
             attrs_plus_value = zip(attributes, args)
             for attr_i, arg_j in attrs_plus_value:
                 setattr(self, attr_i, arg_j)

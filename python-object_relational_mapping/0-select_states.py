@@ -13,10 +13,10 @@ if __name__ == '__main__':
         port=3306,          # Port number of the DB server
         user=argv[1],       # Username passed in argument
         passwd=argv[2],     # Pwd passed in argument
-        db= argv[3])        # DataBase passe in argument
+        db=argv[3])        # DataBase passe in argument
 
-    # create cursor object associated to query,
-    # to acts as a pointer or iterator that allows us to traverse the result set
+    # create cursor object associated to query, to acts as a pointer
+    # or iterator that allows us to traverse the result set
     cur = db.cursor()
 
     # Execute SQL query, to fecth rows from result set in the table "states"
@@ -28,7 +28,7 @@ if __name__ == '__main__':
     # Process data
     for row in rows:
         print(row)
-        
+
     # Close all cursors
     cur.close()
     # Close all databases

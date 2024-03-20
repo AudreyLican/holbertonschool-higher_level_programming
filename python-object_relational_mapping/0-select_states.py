@@ -10,10 +10,11 @@ if __name__ == '__main__':
     # Connect to MySQL server
     db = MySQLdb.connect(
         host="localhost",   # Host name to DB server
-        port=3306,          # Port number of the DB server
         user=argv[1],       # Username passed in argument
+        port=3306,          # Port number of the DB server
         passwd=argv[2],     # Pwd passed in argument
-        db=argv[3])         # DataBase passe in argument
+        db=argv[3]
+        )         # DataBase passe in argument
 
     # create cursor object associated to query, to acts as a pointer
     # or iterator that allows us to traverse the result
@@ -28,3 +29,8 @@ if __name__ == '__main__':
     # Process data
     for row in rows:
         print(row)
+
+    # Close all cursors
+    cur.close()
+    # Close all databases
+    db.close()

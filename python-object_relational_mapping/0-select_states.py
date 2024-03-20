@@ -28,6 +28,3 @@ if __name__ == '__main__':
     # Process data
     for row in rows:
         print(row)
-
-    # Close all cursors
-    cur.close()

@@ -31,7 +31,7 @@ if __name__ == "__main__":
     with db.cursor() as cursor:
         cursor.execute(query, {'state_name': argv[4]})
 
-    rows = cursor.fetchall()
+        rows = cursor.fetchall()
 
     if rows is not None:
         # Print the names of the cities separated by commas

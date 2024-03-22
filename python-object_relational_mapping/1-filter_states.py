@@ -20,7 +20,8 @@ if __name__ == "__main__":
     # or iterator that allows us to traverse the result
     cur = db.cursor()
 
-    query = "SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id ASC"
+    query = "SELECT * FROM states WHERE name LIKE BINARY\
+            'N%' ORDER BY states.id ASC"
     # Execute SQL query, to fecth all states starting with 'N'
     cur.execute(query)
 

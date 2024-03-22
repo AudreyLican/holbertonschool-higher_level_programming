@@ -23,7 +23,7 @@ if __name__ == "__main__":
     query = "SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id ASC"
     # Execute SQL query, to fecth all states starting with 'N'
     cur.execute(query)
-    
+
     rows = cur.fetchall()
     # Print results
     for row in rows:

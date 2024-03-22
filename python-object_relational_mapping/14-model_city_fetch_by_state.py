@@ -23,7 +23,7 @@ if __name__ == "__main__":
 
     # Create a session object
     session = Session()
-    
+
     query_lines = session.query(City, State).\
         filter(City.state_id == State.id).all()
     """Retrieving City-State pairs objects with matching stade_id"""

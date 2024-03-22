@@ -20,16 +20,16 @@ if __name__ == "__main__":
     # create cursor object associated to query, to acts as a pointer
     # or iterator that allows us to traverse the result
     cur = db.cursor()
-    
+
     query = "SELECT * FROM states WHERE name LIKE BINARY '{}' ORDER BY \
             states.id ASC"
 
     cur.execute(query.format(argv[4]))
-    
+
     rows = cur.fetchall()
     for row in rows:
         print(row)
-    
+
     # Close all cursors
     cur.close()
     # Close all databases

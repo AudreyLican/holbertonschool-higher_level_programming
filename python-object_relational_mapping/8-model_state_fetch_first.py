@@ -28,7 +28,7 @@ if __name__ == "__main__":
     session = Session()
     # Query the database for the first State object, ordered by ID
     state = session.query(State).order_by(State.id).first()
-    
+
     # Check if a State object was retrieved
     if state is not None:
         # Print the ID and name of the first State object
